@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { createChart, CrosshairMode } from 'lightweight-charts';
+import { createChart, CrosshairMode, CandlestickSeries } from 'lightweight-charts';
 import { Button } from '@/components/ui/button';
 import { Code2, TrendingUp, Maximize2 } from 'lucide-react';
 import { toast } from 'sonner';
