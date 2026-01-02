@@ -15,10 +15,10 @@ export const TradingChart = ({ symbol, positions, customIndicators, onShowIndica
   const dragInfoRef = useRef(null);
 
   // Generate realistic forex data
-  const generateForexData = (symbol, count = 500) => {
+  const generateForexData = (symbolParam, count = 500) => {
     const data = [];
-    let basePrice = symbol === 'XAUUSD' ? 2650 : symbol === 'EURUSD' ? 1.0850 : 1.2650;
-    const volatility = symbol === 'XAUUSD' ? 2 : 0.0015;
+    let basePrice = symbolParam === 'XAUUSD' ? 2650 : symbolParam === 'EURUSD' ? 1.0850 : 1.2650;
+    const volatility = symbolParam === 'XAUUSD' ? 2 : 0.0015;
     let time = Math.floor(Date.now() / 1000) - count * 60 * parseInt(timeframe);
 
     for (let i = 0; i < count; i++) {
@@ -32,10 +32,10 @@ export const TradingChart = ({ symbol, positions, customIndicators, onShowIndica
 
       data.push({
         time: time,
-        open: parseFloat(open.toFixed(symbol === 'XAUUSD' ? 2 : 5)),
-        high: parseFloat(high.toFixed(symbol === 'XAUUSD' ? 2 : 5)),
-        low: parseFloat(low.toFixed(symbol === 'XAUUSD' ? 2 : 5)),
-        close: parseFloat(close.toFixed(symbol === 'XAUUSD' ? 2 : 5)),
+        open: parseFloat(open.toFixed(symbolParam === 'XAUUSD' ? 2 : 5)),
+        high: parseFloat(high.toFixed(symbolParam === 'XAUUSD' ? 2 : 5)),
+        low: parseFloat(low.toFixed(symbolParam === 'XAUUSD' ? 2 : 5)),
+        close: parseFloat(close.toFixed(symbolParam === 'XAUUSD' ? 2 : 5)),
       });
 
       time += 60 * parseInt(timeframe);
