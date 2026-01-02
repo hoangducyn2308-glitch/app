@@ -86,7 +86,7 @@ export const TradingChart = ({ symbol, positions, customIndicators, onShowIndica
     chartRef.current = chart;
 
     // Add candlestick series
-    const candlestickSeries = chart.addCandlestickSeries({
+    const candlestickSeries = chart.addSeries('candlestick', {
       upColor: 'hsl(141, 78%, 55%)',
       downColor: 'hsl(0, 84%, 60%)',
       borderVisible: false,
