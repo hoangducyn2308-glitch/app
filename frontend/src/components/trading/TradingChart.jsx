@@ -208,6 +208,7 @@ export const TradingChart = ({ symbol, positions, customIndicators, onShowIndica
     });
 
     setTpSlLines(newLines);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [positions]);
 
   const timeframes = ['1', '5', '15', '30', '60', '240', 'D'];
