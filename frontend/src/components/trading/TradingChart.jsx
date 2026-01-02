@@ -171,7 +171,10 @@ export const TradingChart = ({ symbol, positions, customIndicators, onShowIndica
 
   // Draw TP/SL lines for open positions
   useEffect(() => {
-    if (!seriesRef.current || !positions.length) return;
+    if (!seriesRef.current || !positions.length) {
+      setTpSlLines([]);
+      return;
+    }
 
     // Clear existing lines
     tpSlLines.forEach(line => line.remove?.());
